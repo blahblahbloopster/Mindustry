@@ -333,6 +333,8 @@ project(":core"){
         }
     }
 
+    (tasks.getByName("jar") as org.gradle.jvm.tasks.Jar).exclude("mindustry/entities/comp/*Comp.class")
+
     task sourcesJar(type: Jar, dependsOn: classes){
         archiveClassifier = 'sources'
         from sourceSets.main.allSource
